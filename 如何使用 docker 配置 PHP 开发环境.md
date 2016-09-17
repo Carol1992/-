@@ -22,8 +22,112 @@ docker 的原理，就是把开发环境的所有配置，依赖，组件等都�
 - 配置及代码：[github](https://github.com/Carol1992/linqing-blog/tree/master/php_BookMarks)
 
 ## 创建下载 image & 运行 container
+- docker-compose.yml 文件
+```
+nginx:
+    build: ./nginx/
+    ports:
+        - 80:80
+    links:
+        - php
+    volumes_from:
+        - app
+
+php:
+    build: ./php/
+    expose:
+        - 9000
+    links:
+        - mysql
+    volumes_from:
+        - app
+
+app:
+    image: php:7.0-fpm
+    volumes:
+        - .:/var/www/html
+    command: "true"
+
+mysql:
+    image: mysql:latest
+    volumes_from:
+        - data
+    environment:
+        MYSQL_ROOT_PASSWORD: secret
+        MYSQL_DATABASE: bookmarks
+        MYSQL_USER: mag
+        MYSQL_PASSWORD: mag123
+
+data:
+    image: mysql:latest
+    volumes:
+        - /var/lib/mysql
+    command: "true"
+
+phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+        - 8080:80
+    links:
+        - mysql
+    environment:
+        PMA_HOST: mysql
+```
+首先，docker-compose.yml 文件中必须说明每一个 container 由哪个镜像创建的，或者镜像的创建路径。在这里，nginx 镜像  build 的路径是 ./nginx/ ，php 镜像 build 的路径是 ./php/ ，nginx/ 和 php/ 这两个文件夹下面都有一个 Dockerfile 文件，通过 `docker run` 可以执行 Dockerfile 文件中的命令。
+  - ./nginx/Dockerfile
+```
+FROM nginx:latest
+COPY ./default.conf /etc/nginx/conf.d/default.conf
+```
+  - ./php/Dockerfile
+```
+FROM php:7.0-fpm
+RUN docker-php-ext-install mysqli
+```
+然后我们通过 `docker-compose up -d` 命令 Docker Compose 创建和运行我们在 docker-compose.yml 文件说明的 container 。接下来我们只需要配置好 Nginx 服务器并确保项目文件夹中有 index.html 或 index.php 文件，就可以通过 `docker-machine ip default` 获取到 IP 地址，通过浏览器访问该 IP 地址即可看到 index 页面内容。
+  - nginx/default.conf 文件
+```
+server {
+    listen 80 default_server;
+    root /var/www/html;
+    index index.html index.php;
+
+    charset utf-8;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    access_log off;
+    error_log  /var/log/nginx/error.log error;
+
+    sendfile off;
+
+    client_max_body_size 100m;
+
+    location ~ \.php$ {
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass php:9000;
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_intercept_errors off;
+        fastcgi_buffer_size 16k;
+        fastcgi_buffers 4 16k;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}
+```
 
 ## 常见问题
+1. ./php/Dockerfile 文件中说明安装的 PHP 扩展，在该案例中我使用 `new mysqli()` 连接 mysql 数据库， 因此在 Dockerfile 文件中说明安装的 PHP 扩展是 mysqli ，如果是通过 PDO 连接到数据库，则安装 pdo_mysql 扩展。
+2. 如果出现 403 forbidden 的情况，首先检查项目主目录下是否有 index.html 或 index.php 文件，没有的话要创建；其次通过 `ls -l` 查看或通过 `chmod` 命令更改文件夹和文件的权限。
 
 ## UI 展示
 - ![login](https://i.niupic.com/images/2016/09/17/fFfD5P.png)
