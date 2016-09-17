@@ -16,13 +16,17 @@ docker 的原理，就是把开发环境的所有配置，依赖，组件等都�
 在国内使用官方的 Docker Hub 下载镜像时，可能会很慢，所幸国内有一些企业提供 docker 加速器，例如阿里云的镜像加速服务和 daocloud 的 docker 加速服务。要了解如何使用阿里云的镜像加速服务请阅读[【阿里云镜像加速】](https://baichuan.taobao.com/doc2/detail.htm?treeId=39&articleId=103049&docType=1)；我个人使用 daocloud 的镜像加速配置 windows Docker Toolbox ，其他配置请查看[【daocloud docker 加速器】](http://www.daocloud.io/mirror.html#accelerator-doc)。
 
 ## 本文使用的案例
-Book: PHP and MySQL Web Development (4th Edition) by Luke Welling Paperback 
-Code: bookmarks project 的代码，添加了 bootstrap3 以及更改了一些被 PHP 新版本 deprecate 的函数
-Dev Env: Docker LEMP
-开源：[github]()
+- Book: PHP and MySQL Web Development (4th Edition) by Luke Welling Paperback
+- Code: bookmarks project 的代码，添加了 bootstrap3 以及更改了一些被 PHP 新版本 deprecate 的函数
+- Dev Env: Docker LEMP
+- 配置及代码：[github](https://github.com/Carol1992/linqing-blog/tree/master/php_BookMarks)
 
 ## 创建下载 image & 运行 container
 
 ## 常见问题
 
-
+## UI 展示
+- ![login](https://i.niupic.com/images/2016/09/17/fFfD5P.png)
+- ![register](https://i.niupic.com/images/2016/09/17/qQhcMh.png)
+- ![home](https://i.niupic.com/images/2016/09/17/NMXfQ2.png)
+- ![recommendation](https://i.niupic.com/images/2016/09/17/T8Q5as.png)
