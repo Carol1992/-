@@ -64,7 +64,7 @@ SELECT storezip, timeyear, SUM(salesdollar) AS sumsales,
   AND sssales.timeno = sstimedim.timeno
   GROUP BY storezip, timeyear;
 ```
-![ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING]![](https://i.niupic.com/images/2016/09/21/5JGLSi.png)
+![ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING](https://i.niupic.com/images/2016/09/21/5JGLSi.png)
 
 ```
 SELECT timeyear, custcity, SUM(salesdollar) AS sumsales,
