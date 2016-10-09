@@ -6,11 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
 	<link rel="stylesheet" href="styles/styles.css">
 	<link rel="stylesheet" href="styles/bootstrap.min.css">
-	<script src="js/browserJS.js"></script>
-	<script src="js/domJS.js"></script>
-	<script src="js/eventsJS.js"></script>
-	<script src="js/inputJS.js"></script>
-	<script src="js/objectJS.js"></script>
 </head>
 <body>
 <div class="container">
@@ -53,14 +48,72 @@
 			<button onclick="scrollWin2()">ScrollBy</button>
 			<br><br>
 			<h4>访问者的屏幕：高度，宽度，可用高度，可用宽度，像素位/颜色深度</h4>
-			
-		</article>
-		<article>
-			
+			<p id="screen"></p>
+			<br>
+			<h4>返回当前url的主机名和端口；返回当前url的路径名；返回当前url的协议</h4>
+			<p id="location"></p>
+			<br>
+			<h4>加载一个新的 document；替换当前的 document；Break out of a frame</h4>
+			<button onclick="newDoc()">Load a new page and replace the current page</button>
+			<br><br>
+			<h4>浏览历史history中url的数量</h4>
+			<p id="history"></p>
+			<br>
+			<h4>在页面创建后退按钮和前进按钮；重定向到浏览历史中的某条url</h4>
+			<button onclick="goBack()">后退</button>
+			<button onclick="goForward()">前进</button>
+			<button onclick="goSpecific()">重定向</button>
+			<br><br>
+			<h4>判断访问者的浏览器是否支持 cookies，是否支持 java；浏览器名称，工程名称，版本信息，代理信息，平台，语言</h4>
+			<p id="info"></p>
+			<p id="info2"></p>
+			<br>
+			<h4>浏览器跳出一个警示窗口，一个确认窗口，一个输入窗口</h4>
+			<button onclick="sayHi()">警示窗口</button>
+			<button onclick="func01()">确认窗口</button>
+			<button onclick="func02()">输入窗口</button>
+			<p id="demo2"></p>
+			<br>
+			<h4>创建一个 welcome cookie</h4>
+			<button onload="checkCookie()">Cookie demo</button>
+			<br><br>
+			<h4>使用 setInterval() 和 clearInterval()</h4>
+			<p id="clock"></p>
+			<button onclick="clearInterval(timer)">Stop the clock</button>
 		</article>
 	</section>
-	<section></section>
-	<section></section>
+	<section>
+		<article>
+			<h1>javaScript - HTML事件</h1>
+			<h4>onblur onchange onfocus onselect onsubmit onreset onkeydown onkeypress onkeyup</h4>
+			<br>
+			<h4>onmouseup onmousedown onmouseover onmouseout onmousedown onmousemove</h4>
+			<br>
+			<h4>onclick ondblclick</h4>
+			<br>
+			<h4>onload onerror onunload onresize </h4>
+		</article>
+	</section>
+	<section>
+		<article>
+			<h1>javaScript - HTML对象</h1>
+		</article>
+	</section>
+	<section>
+		<article>
+			<h1>javaScript - HTML表单</h1>
+		</article>
+	</section>
+	<section>
+		<article>
+			<h1>javaScript - HTMLDOM</h1>
+		</article>
+	</section>
 </div>
+<script src="js/browserJS.js"></script>
+<script src="js/domJS.js"></script>
+<script src="js/eventsJS.js"></script>
+<script src="js/inputJS.js"></script>
+<script src="js/objectJS.js"></script>
 </body>
 </html>
