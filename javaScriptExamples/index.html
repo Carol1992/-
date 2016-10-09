@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<title>javaScriptExamples</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+	<link rel="stylesheet" href="styles/styles.css">
+	<link rel="stylesheet" href="styles/bootstrap.min.css">
+	<script src="js/browserJS.js"></script>
+	<script src="js/domJS.js"></script>
+	<script src="js/eventsJS.js"></script>
+	<script src="js/inputJS.js"></script>
+	<script src="js/objectJS.js"></script>
+</head>
+<body>
+<div class="container">
+	<section>
+		<article>
+			<h1>javaScript - 浏览器</h1><hr>
+			<h4>点击一个按钮的时候打开一个新窗口，以及控制它的外表</h4>
+			<form action="">
+			<input type="button" value="Go to Blogs" onclick="openWin()">
+			</form>
+			<br>
+			<h4>Blur 和 Focus 一个新的窗口，以及关闭该窗口，并检查窗口是否关闭</h4>
+			<button onclick="openWin()">Go to Blogs</button>
+			<button onclick="blurWin()">Blur The Blogs</button>
+			<button onclick="focusWin()">Focus On Blogs</button>
+			<button onclick="closeWin()">Close the Blogs</button>
+			<button onclick="closeWinCheck()">The status of the new open window</button>
+			<br><br>
+			<h4>往父窗口写入文本</h4>
+			<button onclick="openWin2()">Go to Blogs</button>
+			<p id="demo"></p>
+			<br>
+			<h4>将新窗口移动到指定位置；相对位置和绝对位置</h4>
+			<form action="">
+				<input type="button" value="Go to Blogs" onclick="openWin2()">
+				<input type="button" value="Move By" onclick="moveWin()">
+				<input type="button" value="Move To" onclick="moveWin2()">
+			</form>
+			<br>
+			<h4>打印当前页面</h4>
+			<button onclick="ptintPage()">Print this page</button>
+			<br><br>
+			<h4>根据给定的像素缩放窗口；根据给定的大小缩放窗口</h4>
+			<button onclick="openWin2()">Go to Blogs</button>
+			<button onclick="resizePage()">Resize this page</button>
+			<button onclick="resizePage2()">Resize this page</button>
+			<br><br>
+			<h4>滚动内容到指定位置；按给定的像素滚动内容</h4>
+			<button onclick="scrollWin()">ScrollTo</button>
+			<button onclick="scrollWin2()">ScrollBy</button>
+			<br><br>
+			<h4>访问者的屏幕：高度，宽度，可用高度，可用宽度，像素位/颜色深度</h4>
+			
+		</article>
+		<article>
+			
+		</article>
+	</section>
+	<section></section>
+	<section></section>
+</div>
+</body>
+</html>
