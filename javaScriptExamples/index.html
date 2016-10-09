@@ -121,17 +121,102 @@
 	<section>
 		<article>
 			<h1>javaScript - HTML对象</h1><hr>
-			
+			<h4>找出一个 link 中 href, hreflang, id, rel, target, type 等属性的值</h4>
+			<p>Link: <a href="http://www.wow666.top" id="test" type="text/html" rel="none" target="_blank" hreflang="en-us">LINQING'S BLOG</a></p>
+			<p id="linkInfo"></p>
+			<br>
+			<h4>找出一个 area 中 alternate text,coordinates,shape,href,href 的protocol,hostname,post number,pathname,querystring,hash 等值</h4>
+			<img src="images/planets.gif" alt="map" width="145" height="126" usemap="#planetmap">
+			<map name="planetmap">
+				<area id="venus" shape="circle" coords="124,58,8" href="https://www.baidu.com/s?wd=hello" alt="A beautiful planet">
+			</map>
+			<p id="areas"></p>
+			<br>
+			<h4>找出关联页面中所有 url 的基本 url 和 base target</h4>
+			<p>将下列代码放在 head 标签的第一行：
+			&ltbase href="http://www.w3schools.com/images/" id="htmldom" target="_blank"&gt</p>
+			<p>这样在 DOM 中图片资源的路径就只需要指明资源名称就好，href 的 target 也都会默认为 "_blank"</p>
+			<br>
+			<h4>改变一个 iframe 的背景颜色</h4>
+			<iframe src="http://baidu.com" frameborder="0" id="myFrame" height="200" width="300"></iframe>
+			<button onclick="changeClr()">Change color</button>
+			<br><br>
+			<h4>找出一个 iframe 的高度，name 属性的值，src 属性的值，改变 src 属性的值</h4>
+			<iframe src="http://baidu.com" frameborder="0" id="myFrame2" height="200" width="300" name="iframeText"></iframe>
+			<button onclick="changeSrc()">Change srcValue</button>
+			<p id="iframeInfo"></p>
+			<br>
+			<h4>找出一个 image alt 的值，高度的值，src 的值，改变 src  的值，找出 usemap 属性的值；点击图片得到一张高分辨率的图片</h4>
+			<img src="images/compman_lowres.gif" alt="map" width="145" height="126" usemap="#mapTest" id="img01">
+			<p id="imgInfo"></p>
+			<button onclick="newImg()">High Resolution</button>
+			<br><br>
+			<h4>改变表格边框的宽度，改变表格的 padding；找到一个单元格里面的内容并改变其内容；为表格创建一个 caption；增加或删除表格的行 </h4>
+			<table style="border:1px solid black" id="myTable">
+				<tr>
+					<td>Carol</td>
+					<td>Michale</td>
+				</tr>
+				<tr>
+					<td>Michael</td>
+					<td>Monica</td>
+				</tr>
+			</table>
+			<button onclick="changeBorder()">改变边框</button>
+			<button onclick="changeMargin()">改变 padding</button>
+			<button onclick="changeCell()">改变单元格内容</button>
+			<button onclick="createCaption()">为表格创建 caption</button>
+			<button onclick="addRow()">新增一行</button>
+			<button onclick="deleteRow()">删除一行</button>
 		</article>
 	</section><hr>
 	<section>
 		<article>
 			<h1>javaScript - HTML表单</h1><hr>
+			<h4>disable 一个按钮；找到按钮的 name,type,value,按钮上的text，所属表单的id</h4>
+			<br>
+			<h4>找出表单中每一个元素的值，表单中有多少元素，表单的 accepted character set，action 属性，enctype 属性，发送数据的方法，表单的name,target</h4>
+			<br>
+			<h4>disable 和 enable 一个下拉列表</h4>
+			<br>
+			<h4>获得包含该下拉列表的表单的id</h4>
+			<br>
+			<h4>获得下拉列表选项的数量，选择下拉列表的多项选项</h4>
+			<br>
+			<h4>从下拉列表中增加/删除选项；改变下拉选项的文本</h4>
+			<br>
+			<h4>展示下拉列表中所有选项/选中的选项，选项的索引</h4>
 		</article>
 	</section><hr>
 	<section>
 		<article>
 			<h1>javaScript - HTMLDOM</h1><hr>
+			<h4>找出document中所有 cookie 的所有 name-value 值</h4>
+			<br>
+			<h4>找出加载该document的服务器的域名</h4>
+			<br>
+			<h4>找出该document最后更新的日期和时间</h4>
+			<br>
+			<h4>找出加载该document的url</h4>
+			<br>
+			<h4>找出该document的title</h4>
+			<br>
+			<h4>替换document的内容</h4>
+			<br>
+			<h4>打开一个新窗口然后添加内容</h4>
+			<br>
+			<h4>展示具有特定 name 的元素数量；展示具有特定标签名的元素数量</h4>
+			<br>
+			<h4>找出document中anchor的数量；找出document中第一个anchor的innerHTML</h4>
+			<br>
+			<h4>找出document中link的数量；找出document中第一个link的href属性值</h4>
+			<br>
+			<h4>找出document中所有表单的数量；找出document中第一个表单的name</h4>
+			<br>
+			<h4>找出document中所有image的数量；找出document中第一个image的id</h4>
+			<br>
+			<h4>改变一个HTML元素的visibility；改变一个HTML元素的背景颜色</h4>
+			<br>
 		</article>
 	</section><hr>
 </div>
