@@ -13,10 +13,8 @@
 		<article>
 			<h1>javaScript - 浏览器</h1><hr>
 			<h4>点击一个按钮的时候打开一个新窗口，以及控制它的外表</h4>
-			<form action="">
-			<input type="button" value="Go to Blogs" onclick="openWin()">
-			</form>
-			<br>
+			<button lick="openWin()">Go to Blogs</button>
+			<br><br>
 			<h4>Blur 和 Focus 一个新的窗口，以及关闭该窗口，并检查窗口是否关闭</h4>
 			<button onclick="openWin()">Go to Blogs</button>
 			<button onclick="blurWin()">Blur The Blogs</button>
@@ -29,12 +27,10 @@
 			<p id="demo"></p>
 			<br>
 			<h4>将新窗口移动到指定位置；相对位置和绝对位置</h4>
-			<form action="">
-				<input type="button" value="Go to Blogs" onclick="openWin2()">
-				<input type="button" value="Move By" onclick="moveWin()">
-				<input type="button" value="Move To" onclick="moveWin2()">
-			</form>
-			<br>
+			<button onclick="openWin2()">Go to Blogs</button>
+			<button onclick="moveWin()">Move By</button>
+			<button onclick="moveWin2()">Move To</button>
+			<br><br>
 			<h4>打印当前页面</h4>
 			<button onclick="ptintPage()">Print this page</button>
 			<br><br>
@@ -82,33 +78,62 @@
 			<button onclick="clearInterval(timer)">Stop the clock</button>
 		</article>
 	</section>
+	<hr>
 	<section>
 		<article>
-			<h1>javaScript - HTML事件</h1>
+			<h1>javaScript - HTML事件</h1><hr>
 			<h4>onblur onchange onfocus onselect onsubmit onreset onkeydown onkeypress onkeyup</h4>
+			<form action="">
+			<input type="text" id="frame01" onblur="toUpper(this)" placeholder="onblur">
+			<input type="text" id="frame02" onselect="toUpper(this)" placeholder="onselect">
+			<input type="text" id="frame03" onfocus="toRed(this)" placeholder="onfocus">
+			<input type="text" id="frame04" onkeydown="toRed(this)" onkeyup="toBlue(this)" placeholder="key press">
+			<select name="" id="browsers" onchange="prefer()">
+				<option value="Chrome">Chrome</option>
+				<option value="IE">IE</option>
+				<option value="FireFox">FireFox</option>
+			</select>
+			</form><br>
+			<form action="http://www.wow666.top" onsubmit="confirmInput()">
+				<input type="text" id="fname" size=20 required>
+				<input type="submit">
+			</form><br>
+			<form action="" onreset="resetInput()">
+				<input type="text" id="message" size=20>
+				<input type="reset">
+			</form>		
 			<br>
-			<h4>onmouseup onmousedown onmouseover onmouseout onmousedown onmousemove</h4>
+			<h4>onmouseup onmousedown onmouseover onmouseout onmousemove</h4>
+			<p onmousedown="myFunction(this,'green')" onmouseup="myFunction(this,'red')" onmouseover="myFunction(this,'yellow')" onmouseout="myFunction(this,'blue')">Code less do more!</p>
 			<br>
 			<h4>onclick ondblclick</h4>
+			<button onclick="demo()">Click Once</button>
+			<button ondblclick="demo()">Double Click</button>
+			<p id="demodemo"></p>
 			<br>
 			<h4>onload onerror onunload onresize </h4>
+			<img id="img" src="image.png" alt="" onerror="imgError()">
+			<p onmousedown="coordinates(event)">Click this paragraph to display the x and y coordinates of the mouse pointer and of the cursor, relative to the screen.</p>
+			<p id="s"></p>
+			<p id="c"></p>
 		</article>
-	</section>
+	</section><hr>
 	<section>
 		<article>
-			<h1>javaScript - HTML对象</h1>
+			<h1>javaScript - HTML对象</h1><hr>
+			
 		</article>
-	</section>
+	</section><hr>
 	<section>
 		<article>
-			<h1>javaScript - HTML表单</h1>
+			<h1>javaScript - HTML表单</h1><hr>
 		</article>
-	</section>
+	</section><hr>
 	<section>
 		<article>
-			<h1>javaScript - HTMLDOM</h1>
+			<h1>javaScript - HTMLDOM</h1><hr>
 		</article>
-	</section>
+	</section><hr>
 </div>
 <script src="js/browserJS.js"></script>
 <script src="js/domJS.js"></script>
